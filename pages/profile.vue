@@ -28,21 +28,29 @@
         <song :name="full_name"></song>
         <song :name="full_name"></song>
         <song :name="full_name"></song>
-        <song :name="full_name"></song>
       </div>
     </div>
     <div class="col-span-3 col-start-10">
-      <h5>Artistas Recomendados</h5>
+      <div class="col-span-8 flex items-start flex-col">
+        <h5>Artistas Recomendados</h5>
+        <div class="col-span-2">
+          <SideProfile/>
+          <SideProfile/>
+          <SideProfile/>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 <script>
 import Song from '~/components/Song.vue'
+import SideProfile from '~/components/Side_Profile.vue'
 import FlagGuatemala from '~/assets/svg/flag-guatemala.svg'
 export default {
   components: {
     Song,
-    FlagGuatemala
+    FlagGuatemala,
+    SideProfile
   },
   computed: {
     full_name () {
@@ -58,7 +66,7 @@ export default {
     }
   },
   mounted () {
-    this.name = 'Renato'
+    this.name = 'Santiago'
     this.last_name = 'Fuentes'
     this.avatar_url = `https://ui-avatars.com/api/?name=${this.name}+${this.last_name}`
   },
